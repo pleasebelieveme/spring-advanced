@@ -45,8 +45,8 @@ class ManagerServiceTest {
         given(todoRepository.findById(todoId)).willReturn(Optional.empty());
 
         // when & then
-        InvalidRequestException exception = assertThrows(InvalidRequestException.class, () -> managerService.getManagers(todoId));
-        assertEquals("Manager not found", exception.getMessage());
+        InvalidRequestException exception = assertThrows(InvalidRequestException.class, () -> managerService.getManagers(todoId)); // 예외처리 확인
+        assertEquals("Todo not found", exception.getMessage());
     }
 
     @Test
