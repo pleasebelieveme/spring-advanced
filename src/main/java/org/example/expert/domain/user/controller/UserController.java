@@ -24,6 +24,6 @@ public class UserController {
     @PutMapping("/users")
     public ResponseEntity<Void> changePassword(@Auth AuthUser authUser, @Valid @RequestBody UserChangePasswordRequest userChangePasswordRequest) {
         userService.changePassword(authUser.getId(), userChangePasswordRequest);
-        return ResponseEntity.noContent().build();ㅎ
+        return ResponseEntity.noContent().build();
     }
 }
